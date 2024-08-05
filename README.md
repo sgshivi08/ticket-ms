@@ -25,7 +25,7 @@ The Ticket Microservice is part of a larger event management system responsible 
 
 ### Clone the Repository
 
-git clone https://github.com/your-repo/ticket-ms.git
+git clone https://github.com/sgshivi08/ticket-ms.git
 cd ticket-ms
 
 Testing
