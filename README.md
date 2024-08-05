@@ -29,49 +29,6 @@ The Ticket Microservice is part of a larger event management system responsible 
 git clone https://github.com/your-repo/ticket-microservice.git
 cd ticket-microservice
 
-
-API Endpoints
-Book a Ticket
-URL: /tickets
-Method: POST
-Request Body:
-json
-Copy code
-{
-    "eventId": 1,
-    "userName": "John Doe",
-    "ticketType": "Standard",
-    "numberOfTickets": 2,
-    "paymentAmount": 50.00
-}
-Response:
-json
-Copy code
-{
-    "id": 1,
-    "eventId": 1,
-    "userName": "John Doe",
-    "ticketType": "Standard",
-    "numberOfTickets": 2,
-    "paymentAmount": 50.00
-}
-Cancel a Ticket
-URL: /tickets/{id}
-Method: DELETE
-Response: 204 No Content
-
-Check Ticket Availability
-URL: /tickets/availability
-Method: GET
-Query Parameters:
-eventId (required)
-Response:
-json
-Copy code
-{
-    "availableTickets": 100
-}
-
 Testing
 To run unit tests, use:
 
