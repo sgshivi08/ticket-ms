@@ -25,15 +25,12 @@ The Ticket Microservice is part of a larger event management system responsible 
 
 ### Clone the Repository
 
-```bash
-git clone https://github.com/your-repo/ticket-microservice.git
-cd ticket-microservice
+git clone https://github.com/your-repo/ticket-ms.git
+cd ticket-ms
 
 Testing
 To run unit tests, use:
 
-bash
-Copy code
 mvn test
 Exception Handling
 The microservice uses Spring's @ControllerAdvice for centralized exception handling. Common exceptions are:
