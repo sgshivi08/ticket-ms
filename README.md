@@ -28,6 +28,11 @@ The Ticket Microservice is part of a larger event management system responsible 
 git clone https://github.com/sgshivi08/ticket-ms.git
 cd ticket-ms
 
+Build the Project mvn clean install
+
+Run the Application mvn spring-boot:run
+
+The application will start on port 8080 by default.
 Testing
 To run unit tests, use:
 
