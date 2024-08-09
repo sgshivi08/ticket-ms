@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 public interface EventClient {
 
     @GetMapping("/getById/{event-id}")
-    EventDto getEventDetailsBId(@PathVariable("event-id") Integer id);
+    EventDto getEventDetailsById(@PathVariable("event-id") Integer id);
 
     @PutMapping("/manage")
     void manageEvent(@RequestBody EventDto event);

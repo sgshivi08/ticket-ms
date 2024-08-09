@@ -36,7 +36,7 @@ public class TicketServiceImpl implements TicketService {
     public Ticket bookTicket(Ticket ticket) {
         try {
             // Check event availability by calling Event Service
-            EventDto event = eventClient.getEventDetailsBId(ticket.getEventId());
+            EventDto event = eventClient.getEventDetailsById(ticket.getEventId());
 
             if (event == null) {
                 throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Event not found");
@@ -88,7 +88,7 @@ public class TicketServiceImpl implements TicketService {
                     .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Ticket not found"));
 
             // Retrieve the event
-            EventDto event = eventClient.getEventDetailsBId(ticket.getEventId());
+            EventDto event = eventClient.getEventDetailsById(ticket.getEventId());
             if (event == null) {
                 throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Event not found");
             }
@@ -111,7 +111,7 @@ public class TicketServiceImpl implements TicketService {
     public boolean checkAvailability(Integer eventId, int numberOfTickets) {
         try {
             // Check event availability
-            EventDto event = eventClient.getEventDetailsBId(eventId);
+            EventDto event = eventClient.getEventDetailsById(eventId);
             if (event == null) {
                 throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Event not found");
             }

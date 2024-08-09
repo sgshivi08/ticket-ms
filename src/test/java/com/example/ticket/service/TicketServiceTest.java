@@ -47,7 +47,7 @@ class TicketServiceTest {
         EventDto event = new EventDto();
         event.setId(1);
         event.setAvailableTickets(10);
-        when(eventClient.getEventById(1L)).thenReturn(event);
+        when(eventClient.getEventDetailsById(1)).thenReturn(event);
 
         PaymentResponse paymentResponse = new PaymentResponse();
         paymentResponse.setSuccess(true);
@@ -55,7 +55,7 @@ class TicketServiceTest {
 
         Ticket ticket = new Ticket();
         ticket.setId(1);
-        ticket.setEventId(1L);
+        ticket.setEventId(1);
         ticket.setNumberOfTickets(2);
         when(ticketRepository.save(any(Ticket.class))).thenReturn(ticket);
 
@@ -66,10 +66,10 @@ class TicketServiceTest {
 
     @Test
     void bookTicket_eventNotFound() {
-        when(eventClient.getEventById(1L)).thenReturn(null);
+        when(eventClient.getEventDetailsById(1)).thenReturn(null);
 
         Ticket ticket = new Ticket();
-        ticket.setEventId(1L);
+        ticket.setEventId(1);
 
         assertThrows(ResponseStatusException.class, () -> ticketService.bookTicket(ticket));
     }
@@ -79,10 +79,10 @@ class TicketServiceTest {
         EventDto event = new EventDto();
         event.setId(1);
         event.setAvailableTickets(1);
-        when(eventClient.getEventById(1L)).thenReturn(event);
+        when(eventClient.getEventDetailsById(1)).thenReturn(event);
 
         Ticket ticket = new Ticket();
-        ticket.setEventId(1L);
+        ticket.setEventId(1);
         ticket.setNumberOfTickets(2);
 
         assertThrows(ResponseStatusException.class, () -> ticketService.bookTicket(ticket));
